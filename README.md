@@ -1,24 +1,17 @@
-# codigoLabProgra
-codigo de laboratorio de programacion
-from tkinter import *
+import tkinter as tk
 import webbrowser
-
-tk= Tk()
-
-new = 1
-url = https://www.planteaenverde.es/blog/como-hacer-un-huerto-urbano-en-casa-3/
-#Funcion que abre una pagina web 
-def openweb():
-    webbrowser.open(url,new=new)
-
-#geometria de la ventana, si no de lo geometria, la ventana es del tamaño por defecto del boton
-tk.geometry("660x660")
-#creo boton cuyo comando es abrir la pagina web
-Btn = Button(tk, text = "Nombre del boton",command=openweb)
-#empaqueto el boton
-Btn.pack()
-#genero el loop para inicializar
-tk.mainloop()
+root = tk.Tk()
+menu = tk.Menu(root)
+# Create a menu item for each season
+for season in ["Autumn", "Winter", "Spring", "Summer"]:
+    menu.add_command(label=season, command=lambda: open_link(season))
+# Add the menu to the root window
+root.config(menu=menu)
+# Define a function to open a link in the user's browser
+def open_link(season):
+    webbrowser.open("https://www.planteaenverde.es/blog/como-hacer-un-huerto-urbano-en-casa-3/" + season)
+# Start the main loop
+root.mainloop()
 
 
 
