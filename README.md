@@ -12,7 +12,7 @@ def open_link(season):
     webbrowser.open("https://www.planteaenverde.es/blog/como-hacer-un-huerto-urbano-en-casa-3/" + season)
 # Start the main loop
 root.mainloop()
-
+hola hola hola
 
 
 
